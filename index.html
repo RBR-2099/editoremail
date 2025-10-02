@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>OttO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Adicionando a biblioteca para Drag-and-Drop -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="controles">
+            <header class="editor-header">
+                <h1><i class="fas fa-magic"></i> OTTO<br>Organize, Teste, Transforme e Otmize </h1>
+                <p>Adicione, arraste e organize os blocos de conteúdo.</p>
+            </header>
+
+            <!-- Controles Globais -->
+            <details class="bloco-editor-global" open>
+                <summary><i class="fas fa-cogs"></i> Configurações Gerais</summary>
+                <div class="editor-content">
+                    <label><i class="fas fa-image"></i> Banner Principal (Topo):</label>
+                    <input type="url" id="global-banner-principal-img" class="editor-input" value="https://dl.dnzdns.com/v/w6UVedABF0416">
+                    <label><i class="fas fa-link"></i> Link do Banner Principal:</label>
+                    <input type="url" id="global-banner-principal-link" class="editor-input" value="https://www.rissul.com.br">
+                    <label><i class="fas fa-bullhorn"></i> Campanha UTM (Banner Principal):</label>
+                    <input type="text" id="global-banner-principal-utm" class="editor-input" placeholder="Ex: banner_topo_dia_das_maes">
+                    <hr class="divisor">
+                    <label><i class="fas fa-image"></i> Stick Bar (Abaixo do Menu):</label>
+                    <input type="url" id="global-stick-bar-img" class="editor-input" value="https://dl.dnzdns.com/v/faQOb7ABF0413">
+                    <label><i class="fas fa-link"></i> Link do Stick Bar:</label>
+                    <input type="url" id="global-stick-bar-link" class="editor-input" value="https://www.rissul.com.br">
+                    <label><i class="fas fa-bullhorn"></i> Campanha UTM (Stick Bar):</label>
+                    <input type="text" id="global-stick-bar-utm" class="editor-input" placeholder="Ex: banner_stick_frete_gratis">
+                    <hr class="divisor">
+                    <label for="validity-date"><i class="fas fa-calendar-alt"></i> Data de Validade das Ofertas:</label>
+                    <input type="date" id="validity-date" class="editor-input">
+                </div>
+            </details>
+
+            <!-- Área de construção do corpo do email -->
+            <div class="corpo-construtor">
+                <div class="botoes-adicionar">
+                    <button id="btn-add-produtos"><i class="fas fa-th-large"></i> Adicionar Grade de Produtos</button>
+                    <button id="btn-add-banner"><i class="fas fa-image"></i> Adicionar Banner</button>
+                </div>
+                <div id="blocos-container">
+                    <!-- Os blocos de edição (produtos, banners) serão inseridos aqui -->
+                </div>
+            </div>
+
+            <div class="botoes-exportar">
+                <button id="btn-copiar-html"><i class="fas fa-copy"></i> Copiar Código</button>
+                <button id="btn-exportar-html"><i class="fas fa-file-download"></i> Exportar Ficheiro .html</button>
+            </div>
+            <div class="output-container">
+                <textarea id="html-final" rows="8" readonly placeholder="O código HTML final aparecerá aqui..."></textarea>
+            </div>
+        </div>
+        
+        <div class="preview">
+            <iframe id="iframe-preview" src="template.html"></iframe>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
